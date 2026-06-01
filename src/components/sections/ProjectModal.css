@@ -1,0 +1,136 @@
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s;
+}
+
+.modal-overlay.open {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.modal {
+  background: var(--bg3);
+  border: 1px solid var(--border2);
+  border-radius: 20px;
+  max-width: 600px;
+  width: 100%;
+  max-height: 80vh;
+  overflow-y: auto;
+  transform: scale(0.95);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.modal-overlay.open .modal { transform: scale(1); }
+
+.modal-header { padding: 1.75rem 1.75rem 0; }
+
+.modal-thumb {
+  height: 220px;
+  border-radius: 12px;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 4rem;
+}
+
+.modal-close {
+  position: absolute;
+  top: 1rem; right: 1rem;
+  width: 32px; height: 32px;
+  border-radius: 50%;
+  background: var(--glass);
+  border: 1px solid var(--border);
+  cursor: pointer;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text2);
+  transition: all 0.2s;
+}
+
+.modal-close:hover {
+  background: rgba(239, 68, 68, 0.15);
+  color: var(--red);
+  border-color: var(--red);
+}
+
+.modal-body { padding: 0 1.75rem 1.75rem; }
+
+.modal-title {
+  font-family: 'Syne', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+}
+
+.modal-desc {
+  font-size: 0.85rem;
+  color: var(--text2);
+  line-height: 1.7;
+  margin-bottom: 1.25rem;
+}
+
+.modal-section-title {
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.75rem;
+  margin-top: 1.25rem;
+}
+
+.modal-features {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem;
+}
+
+.modal-features li {
+  font-size: 0.78rem;
+  color: var(--text2);
+  padding-left: 1rem;
+  position: relative;
+}
+
+.modal-features li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+}
+
+.modal-footer {
+  display: flex;
+  gap: 0.75rem;
+  padding: 1rem 1.75rem;
+  border-top: 1px solid var(--border);
+}
+
+.proj-tags {
+  display: flex;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+}
+
+.proj-tag {
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+  background: rgba(0, 212, 255, 0.1);
+  color: var(--accent);
+  border: 1px solid rgba(0, 212, 255, 0.2);
+}

@@ -1,0 +1,171 @@
+/* ─── Footer.css ──────────────────────────────────── */
+
+.footer {
+  position: relative;
+  padding: 64px 0;
+  border-top: 1px solid var(--glass-border);
+}
+
+.footer__inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.footer__grid {
+  display: grid;
+  gap: 40px;
+  margin-bottom: 48px;
+}
+
+@media (min-width: 768px) {
+  .footer__grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+/* Brand column */
+.footer__brand-logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.footer__brand-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #00d4ff, #a855f7);
+  color: #ffffff;
+}
+
+.footer__brand-name {
+  font-family: 'Syne', sans-serif;
+  font-weight: 700;
+  font-size: 1.125rem;
+  background: linear-gradient(135deg, #00d4ff, #60a5fa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.footer__brand-desc {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.875rem;
+  color: #9ca3af;
+  line-height: 1.6;
+}
+
+/* Links column */
+.footer__col-heading {
+  font-family: 'Syne', sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  color: #ffffff;
+  margin-bottom: 16px;
+}
+
+.footer__links-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.footer__nav-link {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.875rem;
+  color: #9ca3af;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer__nav-link:hover { color: #00d4ff; }
+
+/* Contact column */
+.footer__contact-desc {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.875rem;
+  color: #9ca3af;
+  margin-bottom: 16px;
+  line-height: 1.6;
+}
+
+.footer__email-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-family: 'Syne', sans-serif;
+  font-weight: 600;
+  font-size: 0.875rem;
+  border: 1px solid rgba(0, 212, 255, 0.4);
+  color: #00d4ff;
+  background-color: rgba(0, 212, 255, 0.08);
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.footer__email-link:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 16px rgba(0, 212, 255, 0.3);
+}
+
+/* Bottom bar */
+.footer__bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding-top: 32px;
+  border-top: 1px solid var(--glass-border);
+}
+
+@media (min-width: 768px) {
+  .footer__bottom { flex-direction: row; }
+}
+
+.footer__copy {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.875rem;
+  color: #6b7280;
+}
+
+.footer__heart {
+  color: #ff006e;
+  fill: #ff006e;
+}
+
+.footer__socials {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.footer__social-link {
+  padding: 10px;
+  border-radius: 8px;
+  background: var(--glass-bg);
+  backdrop-filter: blur(8px);
+  border: 1px solid var(--glass-border);
+  color: #9ca3af;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.footer__social-link:hover {
+  color: #ffffff;
+  transform: scale(1.1);
+}

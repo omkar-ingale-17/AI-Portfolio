@@ -1,0 +1,217 @@
+/* ─── Navbar.css ──────────────────────────────────── */
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 40;
+  padding: 20px 0;
+  background: transparent;
+  transition: padding 0.4s ease, background 0.4s ease, border-color 0.4s ease;
+  border-radius: 0;
+}
+
+.navbar--scrolled {
+  padding: 12px 0;
+  background: var(--glass-bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--glass-border);
+}
+
+.navbar__inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar__logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+}
+
+.navbar__logo-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #00d4ff, #a855f7);
+  color: #ffffff;
+  flex-shrink: 0;
+}
+
+.navbar__logo-name {
+  font-family: 'Syne', sans-serif;
+  font-weight: 700;
+  font-size: 1.125rem;
+  background: linear-gradient(135deg, #00d4ff, #60a5fa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.navbar__logo-surname {
+  font-family: 'Syne', sans-serif;
+  font-weight: 700;
+  font-size: 1.125rem;
+  color: #ffffff;
+}
+
+.navbar__links {
+  display: none;
+  align-items: center;
+  gap: 4px;
+}
+
+@media (min-width: 768px) {
+  .navbar__links { display: flex; }
+}
+
+.navbar__link {
+  position: relative;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #9ca3af;
+  text-decoration: none;
+  transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+.navbar__link:hover {
+  color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.navbar__link::after {
+  content: '';
+  position: absolute;
+  bottom: 4px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #00d4ff, #a855f7);
+  border-radius: 9999px;
+  transition: width 0.3s ease;
+}
+
+.navbar__link:hover::after {
+  width: 80%;
+}
+
+.navbar__controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.navbar__icon-btn {
+  position: relative;
+  padding: 10px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--glass-bg);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid var(--glass-border);
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  color: #9ca3af;
+}
+
+.navbar__icon-btn:hover {
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+.navbar__icon-btn--listening { color: #00ff88; }
+
+.navbar__voice-ripple {
+  position: absolute;
+  inset: 0;
+  border-radius: 8px;
+  background-color: rgba(0, 255, 136, 0.25);
+  animation: ripple 1.2s ease-out infinite;
+}
+
+.navbar__voice-ripple--delay {
+  animation-delay: 0.4s;
+  background-color: rgba(0, 255, 136, 0.15);
+}
+
+.navbar__menu-btn { display: flex; }
+
+@media (min-width: 768px) {
+  .navbar__menu-btn { display: none; }
+}
+
+.navbar__mobile-panel {
+  overflow: hidden;
+  border-top: 1px solid var(--glass-border);
+}
+
+.navbar__mobile-links {
+  padding: 8px 24px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.navbar__mobile-link {
+  display: block;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 0.9375rem;
+  color: #d1d5db;
+  text-decoration: none;
+  transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+.navbar__mobile-link:hover {
+  color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.navbar__toast {
+  position: fixed;
+  top: 80px;
+  left: 50%;
+  z-index: 50;
+  padding: 10px 20px;
+  background: var(--glass-bg);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(0, 255, 136, 0.3);
+  border-radius: 12px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.875rem;
+  color: #00ff88;
+}
+
+.navbar__transcript {
+  position: fixed;
+  bottom: 112px;
+  right: 24px;
+  z-index: 50;
+  padding: 8px 16px;
+  max-width: 320px;
+  background: var(--glass-bg);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(0, 255, 136, 0.3);
+  border-radius: 16px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.875rem;
+  color: #00ff88;
+}

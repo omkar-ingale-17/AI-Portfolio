@@ -1,0 +1,460 @@
+/* ─── AIDemo.css ──────────────────────────────────── */
+
+.aidemo {
+  padding: 96px 24px;
+  position: relative;
+}
+
+.aidemo__orb {
+  position: absolute;
+  top: 80px;
+  left: 0;
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.1;
+  background: radial-gradient(circle, #a855f7, transparent);
+  pointer-events: none;
+}
+
+.aidemo__inner {
+  max-width: 1024px;
+  margin: 0 auto;
+}
+
+.aidemo__header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.aidemo__pre-title {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.875rem;
+  color: #fbbf24;
+  margin-bottom: 12px;
+}
+
+.aidemo__title {
+  font-family: 'Syne', sans-serif;
+  font-weight: 700;
+  font-size: 2.25rem;
+  color: #ffffff;
+}
+
+@media (min-width: 768px) {
+  .aidemo__title { font-size: 3rem; }
+}
+
+.aidemo__desc {
+  color: #9ca3af;
+  margin-top: 24px;
+  max-width: 36rem;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+}
+
+/* Container */
+.aidemo__container {
+  overflow: hidden;
+  border-radius: 16px;
+}
+
+/* Tabs */
+.aidemo__tabs {
+  display: flex;
+  overflow-x: auto;
+  border-bottom: 1px solid var(--glass-border);
+  background-color: rgba(255, 255, 255, 0.02);
+}
+
+.aidemo__tab {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 16px 20px;
+  font-family: 'Syne', sans-serif;
+  font-weight: 600;
+  font-size: 0.875rem;
+  white-space: nowrap;
+  transition: all 0.3s ease;
+  border-bottom: 2px solid transparent;
+  background: transparent;
+  color: #6b7280;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.aidemo__tab:hover:not(.aidemo__tab--active) {
+  color: #d1d5db;
+}
+
+/* Editor Area */
+.aidemo__editor {
+  padding: 24px;
+  display: grid;
+  gap: 24px;
+}
+
+@media (min-width: 768px) {
+  .aidemo__editor { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* Panels */
+.aidemo__panel {
+  display: flex;
+  flex-direction: column;
+}
+
+.aidemo__panel-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.aidemo__panel-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  color: #6b7280;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.aidemo__panel-meta {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  color: #4b5563;
+}
+
+.aidemo__badge-complete {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  padding: 2px 8px;
+  border-radius: 9999px;
+}
+
+/* Textarea & Output Box */
+.aidemo__textarea {
+  flex: 1;
+  min-height: 256px;
+  resize: none;
+  border-radius: 12px;
+  padding: 16px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.875rem;
+  color: #d1d5db;
+  background-color: rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  outline: none;
+  transition: box-shadow 0.2s ease;
+  line-height: 1.7;
+}
+
+.aidemo__textarea:focus {
+  box-shadow: 0 0 0 1px var(--tw-ring-color);
+}
+
+.aidemo__output-box {
+  flex: 1;
+  min-height: 256px;
+  border-radius: 12px;
+  padding: 16px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.875rem;
+  background-color: rgba(0, 0, 0, 0.4);
+  overflow-y: auto;
+  line-height: 1.7;
+}
+
+/* Actions */
+.aidemo__actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.aidemo__run-btn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px;
+  border-radius: 12px;
+  font-family: 'Syne', sans-serif;
+  font-weight: 600;
+  font-size: 0.875rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.aidemo__run-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.aidemo__reset-btn {
+  padding: 12px;
+  border-radius: 12px;
+  border: none;
+  color: #6b7280;
+  cursor: pointer;
+  transition: color 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.aidemo__reset-btn:hover {
+  color: #d1d5db;
+}
+
+/* Loading & Empty States */
+.aidemo__loading {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 16px;
+}
+
+.aidemo__loading-dots {
+  display: flex;
+  gap: 6px;
+}
+
+.aidemo__loading-text {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.875rem;
+  color: #6b7280;
+}
+
+.aidemo__output-content {
+  color: #d1d5db;
+  white-space: pre-wrap;
+  font-size: 0.875rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.aidemo__empty-state {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #4b5563;
+}
+
+.aidemo__empty-icon {
+  font-size: 1.875rem;
+  margin-bottom: 12px;
+}
+
+.aidemo__empty-text {
+  font-size: 0.875rem;
+  color: #4b5563;
+}
+
+.aidemo__empty-subtext {
+  font-size: 0.75rem;
+  margin-top: 4px;
+  opacity: 0.6;
+}
+
+/* Footer note */
+.aidemo__footer-note {
+  padding: 12px 24px 16px;
+  border-top: 1px solid var(--glass-border);
+}
+
+.aidemo__note-text {
+  color: #4b5563;
+  font-size: 0.75rem;
+  font-family: 'JetBrains Mono', monospace;
+  margin: 0;
+}
+
+/* =========================
+   FIX MISSING GLOBAL STYLES
+========================= */
+
+:root {
+  --glass-border: rgba(255, 255, 255, 0.08);
+}
+
+/* Glass Effect */
+.glass {
+  background: rgba(10, 10, 20, 0.7);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid var(--glass-border);
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+}
+
+.glass-sm {
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--glass-border);
+}
+
+/* =========================
+   BUTTON RESET FIX
+========================= */
+
+.aidemo button {
+  border: none;
+  outline: none;
+}
+
+/* =========================
+   TAB FIX
+========================= */
+
+.aidemo__tabs::-webkit-scrollbar {
+  display: none;
+}
+
+.aidemo__tab--active {
+  color: #00d4ff;
+  border-bottom: 2px solid #00d4ff;
+  background: rgba(0, 212, 255, 0.08);
+}
+
+/* =========================
+   TEXTAREA FIX
+========================= */
+
+.aidemo__textarea {
+  width: 100%;
+}
+
+.aidemo__textarea::placeholder {
+  color: #6b7280;
+}
+
+/* =========================
+   OUTPUT BOX FIX
+========================= */
+
+.aidemo__output-box {
+  color: #d1d5db;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* =========================
+   RESET BUTTON FIX
+========================= */
+
+.aidemo__reset-btn {
+  width: 52px;
+  min-width: 52px;
+  background: rgba(255,255,255,0.08);
+}
+
+.aidemo__reset-btn:hover {
+  background: rgba(255,255,255,0.12);
+}
+
+/* =========================
+   RUN BUTTON FIX
+========================= */
+
+.aidemo__run-btn:hover {
+  transform: translateY(-2px);
+}
+
+/* =========================
+   LOADING DOTS ANIMATION
+========================= */
+
+.loading-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #00d4ff;
+  animation: bounce 0.6s infinite alternate;
+}
+
+.loading-dot:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.loading-dot:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes bounce {
+  from {
+    transform: translateY(0px);
+    opacity: 0.5;
+  }
+
+  to {
+    transform: translateY(-6px);
+    opacity: 1;
+  }
+}
+
+/* =========================
+   MOBILE RESPONSIVE FIX
+========================= */
+
+@media (max-width: 768px) {
+  .aidemo {
+    padding: 70px 16px;
+  }
+
+  .aidemo__editor {
+    grid-template-columns: 1fr;
+  }
+
+  .aidemo__tabs {
+    overflow-x: auto;
+  }
+
+  .aidemo__tab {
+    font-size: 0.8rem;
+    padding: 14px 16px;
+  }
+
+  .aidemo__actions {
+    flex-direction: row;
+  }
+
+  .aidemo__title {
+    font-size: 2rem;
+  }
+}
+
+
+.loading-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #00d4ff;
+  animation: bounce 0.6s infinite alternate;
+}
+
+.loading-dot:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.loading-dot:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes bounce {
+  from {
+    transform: translateY(0);
+    opacity: 0.4;
+  }
+
+  to {
+    transform: translateY(-6px);
+    opacity: 1;
+  }
+}

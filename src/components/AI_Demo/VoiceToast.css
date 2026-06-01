@@ -1,0 +1,19 @@
+.voice-toast {
+  position: fixed;
+  bottom: 8rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--bg3);
+  border: 1px solid var(--accent);
+  border-radius: 100px;
+  padding: 0.5rem 1.25rem;
+  font-size: 0.75rem;
+  color: var(--accent);
+  letter-spacing: 0.05em;
+  z-index: 200;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s;
+}
+
+.voice-toast.show { opacity: 1; }
