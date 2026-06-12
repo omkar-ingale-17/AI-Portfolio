@@ -1,3 +1,8 @@
+import aiVoiceAssistant from "../assets/projects/ai-voice-assistant.png";
+import emailTracker from "../assets/projects/email-tracker.png";
+// import trafficManagement from "../assets/projects/traffic-management.png";
+import hospitalManagement from "../assets/projects/hospital-management.png";
+
 export const skillsData = [
   {
     cat: "Backend & Infrastructure",
@@ -30,10 +35,12 @@ export const skillsData = [
 
 export const projectsData = [
   {
-    emoji: "🧠",
+    image: aiVoiceAssistant,
     bg: "linear-gradient(135deg, #6a11cb, #2575fc)",
     tags: ["AI", "Voice Assistant", "Python"],
-    name: "Cypher AI Voice Assistant",
+    name: "AI Voice Assistant",
+    github: "https://github.com/omkar-ingale-17/AI_Based_Voice_Assistant",
+    demo: "This is Desktop-based Application, so no live demo available. Please check the GitHub repository for code and instructions.",
     desc: "A smart AI-powered voice assistant built using Python that can perform voice-controlled tasks and interacting through a modern GUI interface.",
     features: [
       "🎙️ Wake word detection with multiple custom wake words like Cypher and Quantum",
@@ -50,10 +57,12 @@ export const projectsData = [
     ],
   },
   {
-    emoji: "🛡️",
-    bg: "from-blue-500 to-cyan-500",
+    image: emailTracker,
+    bg: "linear-gradient(135deg, #3b82f6, #06b6d4)",
     tags: ["Cybersecurity", "Web Scraping", "Python"],
     name: "Ethical Email Tracking Analyzer",
+    github: "https://github.com/omkar-ingale-17/Ethical-Email-Tracking-Analyzer",
+    demo: "https://ethical-email-tracking.vercel.app/",
     desc: "A cybersecurity-based email security system that automatically fetches and analyzes incoming emails using AI and web scraping. The system detects phishing links, fake login pages, spoofing attacks, malware attachments, credential theft attempts, and email trackers while generating real-time risk analysis and security alerts.",
     features: [
       "Real-time phishing, spoofing, and spam detection",
@@ -65,36 +74,39 @@ export const projectsData = [
     ],
   },
   {
-  emoji: "🚦",
-  bg: "from-slate-900 via-gray-900 to-zinc-900",
-  tags: ["AI", "YOLOv8", "Python", "IoT", "Flask"],
-  name: "AI-Based Urban Traffic Management System",
-  desc: "An intelligent traffic control system that uses YOLOv8-based vehicle detection, real-time traffic analysis, and IoT integration to dynamically manage traffic signals and reduce urban congestion.",
-  features: [
-    "Real-time vehicle detection and traffic density analysis using YOLOv8",
-    "Smart signal timing adjustment based on live traffic conditions",
-    "Interactive web dashboard for traffic monitoring and analytics",
-    "ESP32 and LED-based IoT traffic signal control system",
-    "Traffic comparison between multiple intersections/signals",
-    "Congestion alerts and adaptive traffic management logic"
-  ],
+    emoji: "🚦",
+    bg: "linear-gradient(135deg, #0f172a, #18181b)",
+    tags: ["AI", "YOLOv8", "Python", "IoT", "Flask"],
+    name: "AI-Based Urban Traffic Management System",
+    desc: "An intelligent traffic control system that uses YOLOv8-based vehicle detection, real-time traffic analysis, and IoT integration to dynamically manage traffic signals and reduce urban congestion.",
+    features: [
+      "Real-time vehicle detection and traffic density analysis using YOLOv8",
+      "Smart signal timing adjustment based on live traffic conditions",
+      "Interactive web dashboard for traffic monitoring and analytics",
+      "ESP32 and LED-based IoT traffic signal control system",
+      "Traffic comparison between multiple intersections/signals",
+      "Congestion alerts and adaptive traffic management logic"
+    ],
   },
   {
-  emoji: "🏥",
-  bg: "",
-  tags: ["Python", "SQLite", "Tkinter"],
-  name: "Hospital Management System",
-  desc: "A desktop-based Hospital Management System built using Python and SQLite to manage patients, appointments, billing, staff, inventory, and hospital records efficiently.",
-  features: [
-    "Patient registration, billing, appointments, and bed management",
-    "GUI-based system with SQLite database and hospital analytics dashboard",
-  ],
+    image: hospitalManagement,
+    bg: "linear-gradient(135deg, #2193b0, #6dd5ed)",
+    tags: ["Python", "SQLite", "Tkinter"],
+    name: "Hospital Management System",
+    github: "https://github.com/omkar-ingale-17/Hospital-Management-System-Using-Python",
+    demo: "This is Desktop-based Application, so no live demo available. Please check the GitHub repository for code and instructions.",
+    desc: "A desktop-based Hospital Management System built using Python and SQLite to manage patients, appointments, billing, staff, inventory, and hospital records efficiently.",
+    features: [
+      "Patient registration, billing, appointments, and bed management",
+      "GUI-based system with SQLite database and hospital analytics dashboard",
+      "Staff management, inventory tracking, and medical record keeping",
+    ],
   },
 ];
 
 export const termLines = [
   { type: "prompt", text: "$ whoami" },
-  { type: "out", text: "aria — AI Engineer & ML Researcher" },
+  { type: "out", text: "Omkar — AI Engineer & ML Researcher" },
   { type: "prompt", text: "$ cat expertise.txt" },
   { type: "out", text: "LLMs, RAG, Fine-tuning, Agents" },
   { type: "out", text: "Computer Vision, NLP, MLOps" },
@@ -103,40 +115,3 @@ export const termLines = [
   { type: "prompt", text: "$ ping opportunity.dev" },
   { type: "out", text: "64 bytes: Open to work ✓" },
 ];
-
-export const chatReplies = {
-  skills:
-    "I specialize in LLM fine-tuning, RAG systems, computer vision, and full-stack AI deployment. Ask me about any specific area!",
-  projects:
-    "I've built NeuralRAG Pro, VisionGuard, AgentFlow, and more. Scroll to the Projects section to explore them, or ask about a specific one.",
-  contact:
-    "You can reach me via the contact form below, or connect on GitHub, LinkedIn, or Twitter. I'm currently open to new opportunities!",
-  experience:
-    "5+ years in AI engineering, with experience at two AI startups and a Fortune 500 tech company. I focus on production-grade ML systems.",
-  available:
-    "Yes! I'm currently open to full-time roles and consulting engagements in AI/ML engineering.",
-  default:
-    "Great question! I'm an AI engineer focused on building production ML systems. Feel free to ask about my projects, skills, or availability!",
-};
-
-export const demoResponses = {
-  text: (q) =>
-    `Processing "${q.slice(0, 40)}...":\n\nHere's a thoughtful response generated by the language model. The system analyzes semantic context, applies chain-of-thought reasoning, and produces coherent, factually-grounded output. In production, this connects to a fine-tuned model endpoint with RAG retrieval.\n\nResponse latency: 187ms | Tokens: 142 | Model: aria-llm-v2`,
-  sentiment: (q) => {
-    const pos = ["happy","great","love","excellent","amazing","good","wonderful"];
-    const neg = ["bad","terrible","hate","awful","poor","horrible","disappointing"];
-    const posScore = pos.filter((w) => q.toLowerCase().includes(w)).length;
-    const negScore = neg.filter((w) => q.toLowerCase().includes(w)).length;
-    const sentiment = posScore > negScore ? "POSITIVE" : negScore > posScore ? "NEGATIVE" : "NEUTRAL";
-    const conf = Math.floor(75 + Math.random() * 20);
-    return `Sentiment: ${sentiment}\nConfidence: ${conf}%\nTone: ${sentiment === "POSITIVE" ? "Optimistic, engaged" : sentiment === "NEGATIVE" ? "Critical, dissatisfied" : "Matter-of-fact"}\nEmotion markers detected: ${posScore + negScore}\nModel: fine-tuned RoBERTa | Latency: 43ms`;
-  },
-  code: () =>
-    `Code Review Analysis:\n\n✓ Syntax: Valid\n⚠ Complexity: Consider refactoring nested conditionals\n✓ Security: No obvious vulnerabilities detected\n⚠ Performance: Potential O(n²) complexity in loop structure\n→ Suggestion: Extract helper functions for readability\n→ Suggestion: Add error handling for edge cases\n\nOverall Quality Score: 7.4/10 | Analysis: AST parsing + LLM review`,
-  classify: (q) => {
-    const topics = ["Technology","Science","Business","Health","Politics","Entertainment","Sports","Education"];
-    const topic = topics[Math.floor(Math.random() * topics.length)];
-    const conf = Math.floor(72 + Math.random() * 24);
-    return `Primary Topic: ${topic} (${conf}% confidence)\nSecondary: ${topics[Math.floor(Math.random() * topics.length)]} (${Math.floor(30 + Math.random() * 30)}%)\n\nKeyword extraction: [${q.split(" ").slice(0, 3).join(", ")}...]\nReadability score: ${Math.floor(50 + Math.random() * 40)}/100\nModel: distilBERT-classifier | Latency: 28ms`;
-  },
-};

@@ -14,8 +14,15 @@ export default function ProjectModal({ project, onClose }) {
         <button className="modal-close" onClick={onClose}>✕</button>
 
         <div className="modal-header">
-          <div className="modal-thumb" style={{ background: project.bg }}>
-            {project.emoji}
+          <div
+            className="modal-thumb"
+            style={{ background: project.bg }}
+          >
+            <img
+              src={project.image}
+              alt={project.name}
+              className="modal-thumb-image"
+            />
           </div>
           <div className="proj-tags" style={{ marginBottom: '0.75rem' }}>
             {project.tags.map((t) => (
@@ -36,8 +43,29 @@ export default function ProjectModal({ project, onClose }) {
         </div>
 
         <div className="modal-footer">
-          <button className="btn-primary">View Live Demo →</button>
-          <button className="btn-outline">GitHub Repo</button>
+
+          {project.demo && (
+            <a
+              href={project.demo}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-primary"
+            >
+              View Live Demo →
+            </a>
+          )}
+
+          {project.github && (
+            <a
+              href={project.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-outline"
+            >
+              GitHub Repo
+            </a>
+          )}
+
         </div>
       </div>
     </div>

@@ -6,7 +6,7 @@
   left: 0;
   right: 0;
   z-index: 40;
-  padding: 20px 0;
+  padding: 10px 0;
   background: transparent;
   transition: padding 0.4s ease, background 0.4s ease, border-color 0.4s ease;
   border-radius: 0;
@@ -14,10 +14,16 @@
 
 .navbar--scrolled {
   padding: 12px 0;
-  background: var(--glass-bg);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  background: rgba(4, 8, 20, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(0,212,255,0.15);
+  box-shadow:0 2px 20px rgba(0,0,0,0.4),0 0 15px rgba(0,212,255,0.08);
   border-bottom: 1px solid var(--glass-border);
+  background-image:
+    linear-gradient(rgba(255,255,255,0.03) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,0.03) 1px,transparent 1px);
+  background-size: 25px 25px;
 }
 
 .navbar__inner {
@@ -157,8 +163,9 @@
 }
 
 .navbar__mobile-panel {
-  overflow: hidden;
-  border-top: 1px solid var(--glass-border);
+  background: rgba(5,10,25,0.97);
+  backdrop-filter: blur(12px);
+  border-top: 1px solid rgba(0,212,255,0.15);
 }
 
 .navbar__mobile-links {
@@ -214,4 +221,43 @@
   font-family: 'JetBrains Mono', monospace;
   font-size: 0.875rem;
   color: #00ff88;
+}
+
+.navbar::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  bottom: 0;
+
+  width: 100%;
+  height: 1px;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      #00d4ff,
+      #a855f7,
+      transparent
+    );
+
+  animation: navbarGlow 4s linear infinite;
+}
+
+@keyframes navbarGlow {
+
+  0% {
+    opacity: .4;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: .4;
+  }
+
 }
