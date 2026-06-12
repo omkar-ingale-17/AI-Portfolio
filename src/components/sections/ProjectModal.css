@@ -155,3 +155,33 @@
   height: 100%;
   object-fit: cover;
 }
+
+.modal-thumb{
+  width:100%;
+  height:220px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  border-radius:16px;
+
+  overflow:hidden;
+
+  background:#0a0f1f;
+}
+
+.modal-thumb__img{
+  width:100%;
+  height:100%;
+
+  object-fit:cover;
+
+  display:block;
+
+  transition:.4s;
+}
+
+.modal-thumb:hover .modal-thumb__img{
+  transform:scale(1.04);
+}

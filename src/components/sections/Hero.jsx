@@ -1,7 +1,7 @@
 import React from 'react';
 import './Hero.css';
 import resume from "../../assets/Resume_v2_0.pdf";
-import photo from "../../assets/My_Photo.jpg";
+import photo from "../../assets/My_Photo.jpeg";
 
 function scrollTo(id) {
   document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
