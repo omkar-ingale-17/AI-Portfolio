@@ -110,7 +110,7 @@ export const projectsData = [
       "Optimized deployment using Vercel"
     ],
 
-    live: "https://omkar-ai-portfolio.vercel.app/",
+    demo: "https://omkar-ai-portfolio.vercel.app/",
     github: "https://github.com/omkar-ingale-17/AI-Portfolio.git",
 
     long:
@@ -138,7 +138,7 @@ export const projectsData = [
       "Fully deployed frontend and backend"
     ],
 
-    live: "https://shravanibridalstudio.vercel.app/",
+    demo: "https://shravanibridalstudio.vercel.app/",
 
     github: "https://github.com/omkar-ingale-17/Shravani_Bridal_Studio.git",
 
