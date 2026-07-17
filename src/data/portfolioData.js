@@ -30,7 +30,7 @@ export const skillsData = [
       { n: "Prompt Engineering", p: 92 },
       { n: "VS Code", p: 85 },
       { n: "Git", p: 90 },
-      { n: "Jupyter Notebooks", p: 80 },
+      { n: "Jupyter Notebooks/Google Colab", p: 80 },
     ],
   },
 ];
