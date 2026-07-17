@@ -27,7 +27,13 @@ export default function Navbar({ isDark, toggleTheme }) {
       return;
     }
     const el = document.getElementById(section);
-    if (el) el.scrollIntoView({ behavior: 'smooth' });
+
+    if (el) {
+    el.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+    }
   };
 
   const { isListening, transcript, isSupported, toggleListening } = useVoice({
@@ -40,6 +46,25 @@ export default function Navbar({ isDark, toggleTheme }) {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const handleNavClick = (href) => {
+    setMobileOpen(false);
+
+    const id = href.replace("#", "");
+
+    setTimeout(() => {
+      const element = document.getElementById(id);
+
+      if (!element) return;
+
+      const navbarHeight = 80;
+
+      window.scrollTo({
+        top: element.offsetTop - navbarHeight,
+        behavior: "smooth",
+      });
+    }, 200);
+  };
+
   return (
     <>
       <motion.nav
@@ -50,7 +75,14 @@ export default function Navbar({ isDark, toggleTheme }) {
       >
         <div className="navbar__inner">
           {/* Logo */}
-          <a href="#hero" className="navbar__logo">
+          <a
+            href="#hero"
+            className="navbar__logo"
+            onClick={(e) => {
+              e.preventDefault();
+              handleNavClick("#hero");
+            }}
+          >
             {/* <div className="navbar__logo-icon">
               <Zap size={16} />
             </div> */}
@@ -66,6 +98,10 @@ export default function Navbar({ isDark, toggleTheme }) {
                 key={link.label}
                 href={link.href}
                 className="navbar__link"
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleNavClick(link.href);
+                }}
               >
                 {link.label}
               </a>
@@ -138,8 +174,11 @@ export default function Navbar({ isDark, toggleTheme }) {
                   <a
                     key={link.label}
                     href={link.href}
-                    onClick={() => setMobileOpen(false)}
                     className="navbar__mobile-link"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      handleNavClick(link.href);
+                    }}
                   >
                     {link.label}
                   </a>

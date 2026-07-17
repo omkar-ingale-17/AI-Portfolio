@@ -261,3 +261,8 @@ section { position: relative; z-index: 1; }
     #a855f7
   );
 }
+
+html{
+    scroll-behavior:smooth;
+    scroll-padding-top:90px;
+}
