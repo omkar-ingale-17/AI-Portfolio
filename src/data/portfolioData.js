@@ -1,6 +1,8 @@
 import aiVoiceAssistant from "../assets/projects/ai-voice-assistant.png";
 import emailTracker from "../assets/projects/email-tracker.png";
-// import trafficManagement from "../assets/projects/traffic-management.png";
+// import trafficManagement from "../assets/projects/traffic-management.png"
+import portfolioImage from "../assets/projects/portfolio.png";
+import shravaniStudio from "../assets/projects/shravani-studio.png";
 import hospitalManagement from "../assets/projects/hospital-management.png";
 
 export const skillsData = [
@@ -87,6 +89,61 @@ export const projectsData = [
       "Traffic comparison between multiple intersections/signals",
       "Congestion alerts and adaptive traffic management logic"
     ],
+  },
+  {
+    image: portfolioImage,
+    bg: "linear-gradient(135deg, #00d4ff, #7c3aed)",
+    tags: ["React", "AI", "Portfolio", "Framer Motion"],
+    name: "Omkar AI Portfolio",
+    desc: "A modern, responsive AI-themed portfolio website showcasing my projects, skills, achievements, certifications, and interactive AI-powered features.",
+
+    features: [
+      "Modern AI-inspired responsive UI with glassmorphism design",
+      "Interactive AI chatbot with Wikipedia search integration",
+      "Voice command navigation using Speech Recognition API",
+      "Live AI Playground with Text Generation, Sentiment Analysis, Code Review, and Text Classification",
+      "Animated sections using Framer Motion",
+      "Dark/Light theme with smooth transitions",
+      "Interactive project gallery with detailed project modal",
+      "Mobile-first responsive design",
+      "Integrated contact form and social media links",
+      "Optimized deployment using Vercel"
+    ],
+
+    live: "https://omkar-ai-portfolio.vercel.app/",
+    github: "https://github.com/omkar-ingale-17/AI-Portfolio.git",
+
+    long:
+      "An AI-inspired personal portfolio built using React and Framer Motion. The website showcases my AI, Machine Learning, Python, and Full Stack projects while providing visitors with an interactive chatbot, AI demo playground, voice navigation, beautiful animations, and a fully responsive modern interface."
+  },
+  {
+    image: shravaniStudio,
+    bg: "linear-gradient(135deg, #ff7eb3, #ff758c)",
+    tags: ["MERN Stack", "Node.js", "React", "Prisma"],
+
+    name: "Shravani Bridal Studio",
+
+    desc: "A complete bridal studio management platform with appointment booking, service management, gallery, authentication, and admin dashboard.",
+
+    features: [
+      "Responsive React frontend with elegant UI",
+      "Secure user authentication and authorization",
+      "Appointment booking system",
+      "Admin dashboard for managing appointments",
+      "Service and pricing management",
+      "Gallery management",
+      "Customer contact form",
+      "Prisma ORM with MySQL database",
+      "REST API built using Express.js",
+      "Fully deployed frontend and backend"
+    ],
+
+    live: "https://shravanibridalstudio.vercel.app/",
+
+    github: "https://github.com/omkar-ingale-17/Shravani_Bridal_Studio.git",
+
+    long:
+      "Shravani Bridal Studio is a full-stack MERN-based web application developed for a professional beauty and bridal studio. The platform allows customers to explore services, book appointments, browse galleries, and contact the studio, while administrators can efficiently manage bookings, services, and customer information through a secure dashboard."
   },
   {
     image: hospitalManagement,
