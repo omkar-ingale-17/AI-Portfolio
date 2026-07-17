@@ -1,6 +1,6 @@
 import React from 'react';
 import './Hero.css';
-import resume from "../../assets/Resume_v2_0.pdf";
+import resume from "../../assets/Resume_v3_0.pdf";
 import photo from "../../assets/My_Photo.jpeg";
 
 function scrollTo(id) {
